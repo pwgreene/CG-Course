@@ -44,6 +44,7 @@ public:
     Vector3 normalized() const;
     
     static float dot( const Vector3& v0, const Vector3& v1);
+    static float angle( const Vector3& v0, const Vector3& v1);
     static Vector3 cross( const Vector3& v0, const Vector3& v1);
     
 private:

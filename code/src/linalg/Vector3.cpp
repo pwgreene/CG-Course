@@ -30,6 +30,12 @@ float Vector3::dot( const Vector3& v0, const Vector3& v1)
     // TODO
     return 0;
 }
+////////////////////////////////////////////////////////////////////////////////
+float Vector3::angle( const Vector3& v0, const Vector3& v1)
+{
+    // TODO
+    return 0;
+}
 
 ////////////////////////////////////////////////////////////////////////////////
 Vector3 Vector3::cross( const Vector3& v0, const Vector3& v1)

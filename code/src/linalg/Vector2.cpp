@@ -31,6 +31,13 @@ float Vector2::dot( const Vector2& v0, const Vector2& v1)
     return 0;
 }
 
+////////////////////////////////////////////////////////////////////////////////
+float Vector2::angle(const Vector2& v0, const Vector2& v1)
+{
+    // TODO
+    return 0;
+}
+
 //////////////////////////////
 // Common Math Operations
 Vector2 operator+ (const Vector2& v0, const Vector2& v1)

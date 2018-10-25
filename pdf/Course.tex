@@ -54,25 +54,41 @@ Let's define some common vector operations that we will use throughout the cours
 
 The \textbf{magnitude} of a vector can be thought of as its Euclidean length. Euclidean length is defined as the square root of each element of the vector squared. We will notate magnitude with the symbol $||\cdot||$. More formally, 
 
-\[||\vec u|| = \sqrt{u_x^2 + u_y^2 + u_z^2}\]
+\begin{equation} \label{eq:mag}
+||\vec u|| = \sqrt{u_x^2 + u_y^2 + u_z^2}
+\end{equation}
 
 Where $u_x$ is the first element of $u$, $u_y$ is the second element, and $u_z$ is the third. This is just a formal way to define ------.
 
 The \textbf{dot product} operates on two vectors and computes the sum of each corresponding element multiplied with each other. We will use the notation $\cdot$ to mean dot product. More formally, the dot product of the three dimensional vectors $\vec u$ and $\vec v$ is 
 
-\[\vec u \cdot \vec v = u_x * v_x + u_y * v_y + u_z * v_z \]
+\begin{equation} \label{eq:dot1}
+\vec u \cdot \vec v = u_x * v_x + u_y * v_y + u_z * v_z
+\end{equation}
 
 \textbf{Normalization} on a vector turns it into a vector of magnitude (length) $1$. To do this, we divide each component of the vector by the vector's length. Formally, to normalize a vector $u$:
 
-\[u_{normalized} = \frac{u}{||u||}\]
+\begin{equation} \label{eq:mag}
+u_{normalized} = \frac{\vec u}{||\vec u||}
+\end{equation}
 
-The \textbf{angle} between two vectors, $u$ and $v$ is computed  
+The \textbf{angle} between two vectors, $u$ and $v$ can be computed using another form of the dot product:
+
+\begin{equation} \label{eq:dot2}
+\vec u \cdot \vec v = ||\vec u|| \, ||\vec v|| \cos\theta
+\end{equation}
+
+Where $\theta$ is the angle between $\vec u$ and $\vec v$. We can rearrange \ref{eq:dot2} to get:
+
+\begin{equation} \label{eq:angle}
+\theta = \arccos \left(\frac{\vec u \cdot \vec v}{||\vec u|| \, ||\vec v||}\right)
+\end{equation}
 
 The \textbf{cross product} operates on two vectors and computes a new vector. We will use the notation $\times$ to mean the cross product. Formally, we define the cross product between two three dimensional vectors $\vec u$ and $\vec v$ as
 
-\[\vec u \times \vec v = ||\vec u|| ||\vec v|| \sin \theta \vec n\]
+\[\vec u \times \vec v = ||\vec u|| \, ||\vec v|| \sin \theta \, \vec n\]
 
-Where $\sin \theta$ is the angle between the vectors $u$ and $v$, and $\vec n$ is a vector perpendicular to both $u$ and $v$.
+$\vec n$ is a vector perpendicular to both $u$ and $v$.
 
 
 

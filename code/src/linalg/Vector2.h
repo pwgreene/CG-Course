@@ -40,7 +40,8 @@ public:
     void normalize();
     Vector2 normalized() const;
     
-    static float dot( const Vector2& v0, const Vector2& v1);
+    static float dot(const Vector2& v0, const Vector2& v1);
+    static float angle(const Vector2& v0, const Vector2& v1);
     
 private:
     float m_elems[2];
