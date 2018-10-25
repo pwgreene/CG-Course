@@ -1,2 +1,7 @@
 code/build/
 .DS_Store
+*.aux
+*.log
+*.out
+*.gz
+*.tex
