@@ -40,3 +40,69 @@ Matrix3x3 Matrix3x3::transpose() const
     //TODO
     return Matrix3x3();
 }
+
+//////////////////////////////
+// Common Math Operations
+Matrix3x3 operator+ (const Matrix3x3 m0, const Matrix3x3 m1)
+{
+    Matrix3x3 res = Matrix3x3();
+    for (int i = 0; i < 3; i++)
+    {
+        for (int j = 0; j < 3; j++)
+        {
+            res(i, j) = m0(i, j) + m1(i, j);
+        }
+    }
+    return res;
+}
+Matrix3x3 operator- (const Matrix3x3 m0, const Matrix3x3 m1)
+{
+    Matrix3x3 res = Matrix3x3();
+    for (int i = 0; i < 3; i++)
+    {
+        for (int j = 0; j < 3; j++)
+        {
+            res(i, j) = m0(i, j) - m1(i, j);
+        }
+    }
+    return res;
+}
+Vector3 operator* (const Matrix3x3 m, const Vector3 v)
+{
+    //TODO: implement Matrix-Vector multiplication
+    return Vector3();
+}
+Matrix3x3 operator* (const Matrix3x3 m0, const Matrix3x3 m1)
+{
+    //TODO: implement Matrix-Matrix multiplication
+    //hint : there are 3x3x3=27 total multiplies
+    return Matrix3x3();
+}
+Matrix3x3 operator* (const Matrix3x3 m, float f)
+{
+    Matrix3x3 res = Matrix3x3();
+    for (int i = 0; i < 3; i++)
+    {
+        for (int j = 0; j < 3; j++)
+        {
+            res(i, j) = m(i, j) * f;
+        }
+    }
+    return res;
+}
+Matrix3x3 operator* (float f, const Matrix3x3 m)
+{
+    return m * f;
+}
+Matrix3x3 operator/ (const Matrix3x3 m, float f)
+{
+    Matrix3x3 res = Matrix3x3();
+    for (int i = 0; i < 3; i++)
+    {
+        for (int j = 0; j < 3; j++)
+        {
+            res(i, j) = m(i, j) / f;
+        }
+    }
+    return res;
+}
