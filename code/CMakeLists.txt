@@ -23,11 +23,13 @@ set(CPP_FILES
     ${SRC_DIR}/main/main.cpp
     ${SRC_DIR}/linalg/Vector2.cpp
     ${SRC_DIR}/linalg/Vector3.cpp
+    ${SRC_DIR}/linalg/Matrix3x3.cpp
     )
 
 set(CPP_HEADERS
     ${SRC_DIR}/linalg/Vector2.h
     ${SRC_DIR}/linalg/Vector3.h
+    ${SRC_DIR}/linalg/Matrix3x3.h
     )
 
 
