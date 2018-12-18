@@ -2,6 +2,7 @@
 #include <iostream>
 #include "linalg/Vector2.h"
 #include "linalg/Vector3.h"
+#include "linalg/Matrix3x3.h"
 
 void test_Vector2()
 {
@@ -27,9 +28,21 @@ void test_Vector3()
     assert(v2[0] == 1.5 && v2[1] == -3 && v2[2] == 1.5);
 }
 
+void test_Matrix3x3()
+{
+    Matrix3x3 I = Matrix3x3(1, 0, 0,
+                            0, 1, 0,
+                            0, 0, 1);
+    Matrix3x3 m0 = Matrix3x3(-2, 1, 1,
+                             -.5, -1, 1,
+                             -1, 6, -1);
+    assert(I * m0 == m0);
+}
+
 int main()
 {
     test_Vector2();
     test_Vector3();
+    test_Matrix3x3();
     std::cout << "All tests pass!\n";
 }

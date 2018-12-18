@@ -106,3 +106,20 @@ Matrix3x3 operator/ (const Matrix3x3 m, float f)
     }
     return res;
 }
+bool operator== (const Matrix3x3 m0, const Matrix3x3 m1)
+{
+    bool eq = true;
+    for (int i = 0; i < 3; i++)
+    {
+        for (int j = 0; j < 3; j++)
+        {
+            if (fabs(m0(i, j) - m1(i, j)) > 1e-6)
+                eq = false;
+        }
+    }
+    return eq;
+}
+bool operator!= (const Matrix3x3 m0, const Matrix3x3 m1)
+{
+    return !(m0 == m1);
+}

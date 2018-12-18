@@ -1,3 +1,6 @@
+#ifndef VECTOR2_H
+#define VECTOR2_H
+
 #include <cmath>
 #include <assert.h>
 
@@ -45,7 +48,6 @@ public:
     
 private:
     float m_elems[2];
-    float m_eqEpsilon = 1e-6;
 };
 
 //////////////////////////////
@@ -62,3 +64,5 @@ Vector2 operator- (const Vector2& v0);
 Vector2 operator* (float f, const Vector2& v0);
 Vector2 operator* (const Vector2& v0, float f);
 Vector2 operator/ (const Vector2& v0, float f);
+
+#endif //VECTOR2_H

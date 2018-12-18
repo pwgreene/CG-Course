@@ -1,3 +1,6 @@
+#ifndef VECTOR3_H
+#define VECTOR3_H
+
 #include <cmath>
 #include <assert.h>
 
@@ -49,7 +52,6 @@ public:
     
 private:
     float m_elems[3];
-    float m_eqEpsilon = 1e-6;
 };
 
 //////////////////////////////
@@ -66,3 +68,5 @@ Vector3 operator- (const Vector3& v0);
 Vector3 operator* (float f, const Vector3& v0);
 Vector3 operator* (const Vector3& v0, float f);
 Vector3 operator/ (const Vector3& v0, float f);
+
+#endif //VECTOR3_H

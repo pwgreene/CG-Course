@@ -1,3 +1,6 @@
+#ifndef MATRIX3X3_H
+#define MATRIX3X3_H
+
 #include "Vector3.h"
 
 class Matrix3x3
@@ -46,3 +49,8 @@ Matrix3x3 operator* (const Matrix3x3 m0, const Matrix3x3 m1);
 Matrix3x3 operator* (const Matrix3x3 m, float f);
 Matrix3x3 operator* (float f, const Matrix3x3 m);
 Matrix3x3 operator/ (const Matrix3x3 m, float f);
+
+bool operator == (const Matrix3x3 m0, const Matrix3x3 m1);
+bool operator != (const Matrix3x3 m0, const Matrix3x3 m1);
+
+#endif //MATRIX3X3_H

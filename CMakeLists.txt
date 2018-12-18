@@ -15,9 +15,9 @@ elseif(MSVC)
   add_definitions("-D_CRT_SECURE_NO_WARNINGS")
 endif()
 
-include_directories(src/)
+include_directories(code/src)
 
-set (SRC_DIR "src/")
+set (SRC_DIR "code/src")
 
 set(CPP_FILES
     ${SRC_DIR}/main/main.cpp
