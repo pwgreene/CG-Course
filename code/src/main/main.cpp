@@ -41,6 +41,7 @@ void test_Matrix3x3()
                              2, 8, 7);
     assert(I * m0 == m0);
     assert(m1.determinant() == -306);
+    assert((m1.inverse().determinant() + 1.0/306) < 1e-8);
 }
 
 int main()

@@ -29,13 +29,23 @@ float Matrix3x3::determinant() const
 }
 Matrix3x3 Matrix3x3::inverse() const
 {
-    //TODO
-    return Matrix3x3();
+    Matrix3x3 cofactors = Matrix3x3(m_elems[4]*m_elems[8] - m_elems[5]*m_elems[7],
+                                    m_elems[5]*m_elems[6] - m_elems[3]*m_elems[8],
+                                    m_elems[3]*m_elems[7] - m_elems[4]*m_elems[6],
+                                    m_elems[2]*m_elems[7] - m_elems[1]*m_elems[8],
+                                    m_elems[0]*m_elems[8] - m_elems[2]*m_elems[6],
+                                    m_elems[1]*m_elems[6] - m_elems[0]*m_elems[7],
+                                    m_elems[1]*m_elems[5] - m_elems[2]*m_elems[4],
+                                    m_elems[2]*m_elems[3] - m_elems[0]*m_elems[5],
+                                    m_elems[0]*m_elems[4] - m_elems[1]*m_elems[3]);
+
+    return 1.0/determinant() * cofactors.transpose();
 }
 Matrix3x3 Matrix3x3::transpose() const
 {
-    //TODO
-    return Matrix3x3();
+    return Matrix3x3(m_elems[0], m_elems[3], m_elems[6],
+                     m_elems[1], m_elems[4], m_elems[7],
+                     m_elems[2], m_elems[5], m_elems[8]);
 }
 
 //////////////////////////////
