@@ -6,42 +6,42 @@
 ////////////////////////////////////////////////////////////////////////////////
 float Vector3::magnitude() const
 {
-    // TODO
-    return 0;
+    return sqrtf(m_elems[0]*m_elems[0] + m_elems[1]*m_elems[1] + m_elems[2]*m_elems[2]);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 void Vector3::normalize()
 {
-    // TODO
-    return;
+    float mag = magnitude();
+    m_elems[0] /= mag;
+    m_elems[1] /= mag;
+    m_elems[2] /= mag;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 Vector3 Vector3::normalized() const
 {
-    //TODO
-    return Vector3();
+    float mag = magnitude();
+    return Vector3(m_elems[0]/mag, m_elems[1]/mag, m_elems[2]/mag);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 float Vector3::dot( const Vector3& v0, const Vector3& v1)
 {
-    // TODO
-    return 0;
+    return v0.x() * v1.x() + v0.y() * v1.y() + v0.z() * v1.z();
 }
 ////////////////////////////////////////////////////////////////////////////////
 float Vector3::angle( const Vector3& v0, const Vector3& v1)
 {
-    // TODO
-    return 0;
+    return acosf(dot(v0, v1) / (v0.magnitude() * v1.magnitude()));
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 Vector3 Vector3::cross( const Vector3& v0, const Vector3& v1)
 {
-    // TODO
-    return Vector3();
+    return Vector3(v0.y()*v1.z() - v0.z()*v1.y(),
+                   v0.z()*v1.x() - v0.x()*v1.z(),
+                   v0.x()*v1.y() - v0.y()*v1.x());
 }
 
 //////////////////////////////

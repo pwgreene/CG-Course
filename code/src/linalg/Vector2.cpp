@@ -6,36 +6,34 @@
 ////////////////////////////////////////////////////////////////////////////////
 float Vector2::magnitude() const
 {
-    // TODO
-    return 0;
+    return sqrtf(m_elems[0]*m_elems[0] + m_elems[1]*m_elems[1]);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 void Vector2::normalize()
 {
-    // TODO
-    return;
+    float mag = magnitude();
+    m_elems[0] /= mag;
+    m_elems[1] /= mag;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 Vector2 Vector2::normalized() const
 {
-    //TODO
-    return Vector2();
+    float mag = magnitude();
+    return Vector2(m_elems[0]/mag, m_elems[1]/mag);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 float Vector2::dot( const Vector2& v0, const Vector2& v1)
 {
-    // TODO
-    return 0;
+    return v0.x() * v1.x() + v0.y() * v1.y();
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 float Vector2::angle(const Vector2& v0, const Vector2& v1)
 {
-    // TODO
-    return 0;
+    return acosf(dot(v0, v1) / (v0.magnitude() * v1.magnitude()));
 }
 
 //////////////////////////////
