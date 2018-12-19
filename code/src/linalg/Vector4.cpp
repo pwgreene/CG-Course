@@ -10,34 +10,35 @@
 ////////////////////////////////////////////////////////////////////////////////
 float Vector4::magnitude() const
 {
-    //TODO: implement this
-    return 0;
+    return sqrtf(m_elems[0]*m_elems[0] + m_elems[1]*m_elems[1] + m_elems[2]*m_elems[2] + m_elems[3]*m_elems[3]);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 void Vector4::normalize()
 {
-    //TODO: implement this
+    float mag = magnitude();
+    m_elems[0] /= mag;
+    m_elems[1] /= mag;
+    m_elems[2] /= mag;
+    m_elems[3] /= mag;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 Vector4 Vector4::normalized() const
 {
-    //TODO: implement this
-    return Vector4();
+    float mag = magnitude();
+    return Vector4(m_elems[0]/mag, m_elems[1]/mag, m_elems[2]/mag, m_elems[3]/mag);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 float Vector4::dot( const Vector4& v0, const Vector4& v1)
 {
-    //TODO: implement this
-    return 0;
+    return v0.x()*v1.x() + v0.y()*v1.y() + v0.z()*v1.z() + v0.w()*v1.w();
 }
 ////////////////////////////////////////////////////////////////////////////////
 float Vector4::angle( const Vector4& v0, const Vector4& v1)
 {
-    //TODO: implement this
-    return 0;
+    return acosf(dot(v0, v1) / (v0.magnitude() * v1.magnitude()));
 }
 
 //////////////////////////////

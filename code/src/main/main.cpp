@@ -58,7 +58,20 @@ void test_Matrix3x3()
 
 void test_Matrix4x4()
 {
-
+    Matrix4x4 I = Matrix4x4(1, 0, 0, 0,
+                            0, 1, 0, 0,
+                            0, 0, 1, 0,
+                            0, 0, 0, 1);
+    Vector4 v0 = Vector4(1, 2, 3, 4);
+    v0 = I * v0;
+    Matrix4x4 m0 = Matrix4x4(-1, 2, 3, 6,
+                             -2, 1, 2, 1,
+                             3, -3, 3, 0,
+                             1, 1, 0, 1);
+    assert(I * m0 == m0);
+    assert(v0.x() == 1 && v0.y() == 2 && v0.z() == 3 && v0.w() == 4);
+    assert(abs(m0.determinant() + 75) < 1e-8);
+    assert(abs(m0.inverse().determinant() + 1.0/75) < 1e-8);
 }
 
 int main()
