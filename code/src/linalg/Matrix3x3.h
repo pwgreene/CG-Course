@@ -2,16 +2,14 @@
 #define MATRIX3X3_H
 
 #include "Vector3.h"
+#include <string.h>
 
 class Matrix3x3
 {
 public:
     Matrix3x3()
     {
-        for (int i = 0; i < 9; i++)
-        {
-            m_elems[i] = 0;
-        }
+        memset(m_elems, 0, sizeof(m_elems));
     }
     
     Matrix3x3(float e00, float e01, float e02,

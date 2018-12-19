@@ -2,7 +2,9 @@
 #include <iostream>
 #include "linalg/Vector2.h"
 #include "linalg/Vector3.h"
+#include "linalg/Vector4.h"
 #include "linalg/Matrix3x3.h"
+#include "linalg/Matrix4x4.h"
 
 void test_Vector2()
 {
@@ -28,6 +30,16 @@ void test_Vector3()
     assert(v2[0] == 1.5 && v2[1] == -3 && v2[2] == 1.5);
 }
 
+void test_Vector4()
+{
+    Vector4 v0 = Vector4(1, 1, 1, 1);
+    Vector4 v1 = Vector4(3, 4.5, 6, 4);
+    Vector4 v2 = v0 * v1;
+    assert(v2[0] == 3 && v2[1] == 4.5 && v2[2] == 6 && v2[3] == 4);
+    assert(v0.magnitude() == sqrtf(4));
+    assert(Vector4::dot(v0, v1) == 17.5);
+}
+
 void test_Matrix3x3()
 {
     Matrix3x3 I = Matrix3x3(1, 0, 0,
@@ -44,10 +56,17 @@ void test_Matrix3x3()
     assert((m1.inverse().determinant() + 1.0/306) < 1e-8);
 }
 
+void test_Matrix4x4()
+{
+
+}
+
 int main()
 {
     test_Vector2();
     test_Vector3();
+    test_Vector4();
     test_Matrix3x3();
+    test_Matrix4x4();
     std::cout << "All tests pass!\n";
 }
